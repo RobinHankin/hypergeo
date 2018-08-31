@@ -7,7 +7,7 @@
 
 // using namespace Rcpp;
 
-bool isgood( arma::cx_vec x, double tol)
+bool isgood(const arma::cx_vec x, const double tol)
 { 
   int i=0;
   for( i=0 ; i < x.size() ; i++){
