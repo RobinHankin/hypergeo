@@ -9,21 +9,21 @@
 
 using namespace Rcpp;
 
-// complex_gamma
-arma::cx_vec complex_gamma(const arma::cx_vec z);
-static SEXP hypergeo_complex_gamma_try(SEXP zSEXP) {
+// complex_lngamma
+arma::cx_vec complex_lngamma(const arma::cx_vec z);
+static SEXP hypergeo_complex_lngamma_try(SEXP zSEXP) {
 BEGIN_RCPP
     Rcpp::RObject __result;
     Rcpp::traits::input_parameter< const arma::cx_vec >::type z(zSEXP);
-    __result = Rcpp::wrap(complex_gamma(z));
+    __result = Rcpp::wrap(complex_lngamma(z));
     return __result;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP hypergeo_complex_gamma(SEXP zSEXP) {
+RcppExport SEXP hypergeo_complex_lngamma(SEXP zSEXP) {
     SEXP __result;
     {
         Rcpp::RNGScope __rngScope;
-        __result = PROTECT(hypergeo_complex_gamma_try(zSEXP));
+        __result = PROTECT(hypergeo_complex_lngamma_try(zSEXP));
     }
     Rboolean __isInterrupt = Rf_inherits(__result, "interrupted-error");
     if (__isInterrupt) {
@@ -39,22 +39,22 @@ RcppExport SEXP hypergeo_complex_gamma(SEXP zSEXP) {
     UNPROTECT(1);
     return __result;
 }
-// complex_gamma_cpp
-Rcpp::ComplexVector complex_gamma_cpp(const Rcpp::NumericVector& real, const Rcpp::NumericVector& imag);
-static SEXP hypergeo_complex_gamma_cpp_try(SEXP realSEXP, SEXP imagSEXP) {
+// complex_lngamma_cpp
+Rcpp::ComplexVector complex_lngamma_cpp(const Rcpp::NumericVector& real, const Rcpp::NumericVector& imag);
+static SEXP hypergeo_complex_lngamma_cpp_try(SEXP realSEXP, SEXP imagSEXP) {
 BEGIN_RCPP
     Rcpp::RObject __result;
     Rcpp::traits::input_parameter< const Rcpp::NumericVector& >::type real(realSEXP);
     Rcpp::traits::input_parameter< const Rcpp::NumericVector& >::type imag(imagSEXP);
-    __result = Rcpp::wrap(complex_gamma_cpp(real, imag));
+    __result = Rcpp::wrap(complex_lngamma_cpp(real, imag));
     return __result;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP hypergeo_complex_gamma_cpp(SEXP realSEXP, SEXP imagSEXP) {
+RcppExport SEXP hypergeo_complex_lngamma_cpp(SEXP realSEXP, SEXP imagSEXP) {
     SEXP __result;
     {
         Rcpp::RNGScope __rngScope;
-        __result = PROTECT(hypergeo_complex_gamma_cpp_try(realSEXP, imagSEXP));
+        __result = PROTECT(hypergeo_complex_lngamma_cpp_try(realSEXP, imagSEXP));
     }
     Rboolean __isInterrupt = Rf_inherits(__result, "interrupted-error");
     if (__isInterrupt) {
@@ -211,8 +211,8 @@ RcppExport SEXP hypergeo_lanczos_cpp(SEXP realSEXP, SEXP imagSEXP) {
 static int hypergeo_RcppExport_validate(const char* sig) { 
     static std::set<std::string> signatures;
     if (signatures.empty()) {
-        signatures.insert("arma::cx_vec(*complex_gamma)(const arma::cx_vec)");
-        signatures.insert("Rcpp::ComplexVector(*complex_gamma_cpp)(const Rcpp::NumericVector&,const Rcpp::NumericVector&)");
+        signatures.insert("arma::cx_vec(*complex_lngamma)(const arma::cx_vec)");
+        signatures.insert("Rcpp::ComplexVector(*complex_lngamma_cpp)(const Rcpp::NumericVector&,const Rcpp::NumericVector&)");
         signatures.insert("arma::cx_vec(*genhypergeo_series)(const arma::cx_vec,const arma::cx_vec,arma::cx_vec,const double,const int,const bool,const bool)");
         signatures.insert("Rcpp::ComplexVector(*genhypergeo_series_cpp)(const Rcpp::NumericVector&,const Rcpp::NumericVector&,const Rcpp::NumericVector&,const Rcpp::NumericVector&,const Rcpp::NumericVector&,const Rcpp::NumericVector&,const double,const int,const bool,const bool)");
         signatures.insert("arma::cx_vec(*lanczos)(arma::cx_vec)");
@@ -223,8 +223,8 @@ static int hypergeo_RcppExport_validate(const char* sig) {
 
 // registerCCallable (register entry points for exported C++ functions)
 RcppExport SEXP hypergeo_RcppExport_registerCCallable() { 
-    R_RegisterCCallable("hypergeo", "hypergeo_complex_gamma", (DL_FUNC)hypergeo_complex_gamma_try);
-    R_RegisterCCallable("hypergeo", "hypergeo_complex_gamma_cpp", (DL_FUNC)hypergeo_complex_gamma_cpp_try);
+    R_RegisterCCallable("hypergeo", "hypergeo_complex_lngamma", (DL_FUNC)hypergeo_complex_lngamma_try);
+    R_RegisterCCallable("hypergeo", "hypergeo_complex_lngamma_cpp", (DL_FUNC)hypergeo_complex_lngamma_cpp_try);
     R_RegisterCCallable("hypergeo", "hypergeo_genhypergeo_series", (DL_FUNC)hypergeo_genhypergeo_series_try);
     R_RegisterCCallable("hypergeo", "hypergeo_genhypergeo_series_cpp", (DL_FUNC)hypergeo_genhypergeo_series_cpp_try);
     R_RegisterCCallable("hypergeo", "hypergeo_lanczos", (DL_FUNC)hypergeo_lanczos_try);

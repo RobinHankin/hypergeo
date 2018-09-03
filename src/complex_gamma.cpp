@@ -9,7 +9,7 @@
 // using namespace Rcpp;
 
 // [[Rcpp::export]]
-arma::cx_vec complex_gamma( const arma::cx_vec z )
+arma::cx_vec complex_lngamma( const arma::cx_vec z )
 {
   int i = 0;
   
@@ -29,12 +29,12 @@ arma::cx_vec complex_gamma( const arma::cx_vec z )
 
 
 // [[Rcpp::export]]
-Rcpp::ComplexVector complex_gamma_cpp(const Rcpp::NumericVector & real,
+Rcpp::ComplexVector complex_lngamma_cpp(const Rcpp::NumericVector & real,
                              const Rcpp::NumericVector & imag )
 {
   
   arma::cx_vec z(Rcpp::as<arma::vec>(real), Rcpp::as<arma::vec>(imag));
   
-  return Rcpp::wrap( complex_gamma( z ) );
+  return Rcpp::wrap( complex_lngamma( z ) );
 }
 

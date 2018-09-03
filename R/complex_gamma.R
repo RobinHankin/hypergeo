@@ -1,4 +1,5 @@
 `lanczos` <- function(z, log=FALSE){
+
     stopifnot( all( base::Re( z ) >= 0.5 ) )
 
     out = as.vector( lanczos_cpp( base::Re( z ), 
