@@ -7,7 +7,7 @@
 
 // using namespace Rcpp;
 
-bool isgood( arma::cx_vec x, double tol)
+bool isgood(const arma::cx_vec x, const double tol)
 { 
   int i=0;
   for( i=0 ; i < x.size() ; i++){
@@ -21,7 +21,7 @@ bool isgood( arma::cx_vec x, double tol)
 // [[Rcpp::export]]
 arma::cx_vec genhypergeo_series( const arma::cx_vec U,
                                  const arma::cx_vec L,
-                                 arma::cx_vec z,
+                                       arma::cx_vec z,
                                  const double tol,
                                  const int maxiter,
                                  const bool check_mod,
@@ -76,7 +76,8 @@ arma::cx_vec genhypergeo_series( const arma::cx_vec U,
 
 
 // [[Rcpp::export]]
-Rcpp::ComplexVector genhypergeo_series_cpp(const Rcpp::NumericVector & real_U,
+Rcpp::ComplexVector genhypergeo_series_cpp(
+				      const Rcpp::NumericVector & real_U,
                                       const Rcpp::NumericVector & imag_U,
                                       const Rcpp::NumericVector & real_L,
                                       const Rcpp::NumericVector & imag_L,
