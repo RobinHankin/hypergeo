@@ -28,7 +28,7 @@ genhypergeo_contfrac_single(U, L, z, tol = 0, maxiter = 2000)
     \item
     M. Abramowitz and I. A. Stegun 1965. \emph{Handbook of
       mathematical functions}.  New York: Dover
-    \item \url{http://functions.wolfram.com/Hypergeometric2F1.pdf}
+    \item \url{http://functions.wolfram.com/PDF/Hypergeometric2F1.pdf}
   }
 }
 \author{Robin K. S. Hankin}

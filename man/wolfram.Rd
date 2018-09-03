@@ -56,7 +56,7 @@ w07.23.06.0031.01_bit2(A, n, m, z, tol = 0, maxiter = 2000)
   are not supported.  I'm working on it.
   }
 \references{
-  \url{http://functions.wolfram.com/Hypergeometric2F1.pdf}
+  \url{http://functions.wolfram.com/PDF/Hypergeometric2F1.pdf}
 }
 \author{Robin K. S. Hankin}
 \seealso{\code{\link{f15.3.10}},\code{\link{hypergeo}}}
