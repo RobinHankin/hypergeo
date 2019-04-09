@@ -24,12 +24,11 @@
 \title{Numerical evaluation of the Gauss hypergeometric function with
   the \pkg{hypergeo} package}
 
-%\VignetteIndexEntry{The hyperdirichlet distribution in practice}
+%\VignetteIndexEntry{The Gauss Hypergeometric function}
 
 %% for pretty printing and a nice hypersummary also set:
 \Plainauthor{Robin K. S. Hankin}
 \Plaintitle{The hypergeo package}
-
 
 \Keywords{Hypergeometric functions, numerical evaluation, complex
   plane,  \proglang{R}, residue theorem}
@@ -47,7 +46,11 @@
   methods used in the package; and justifies the package philosophy,
   which is to maintain transparent and verifiable links between the
   software and AMS-55.  The package is demonstrated in the context of
-  game theory.  }
+  game theory.
+
+
+  This vignette is based on \citep{hankin2015}.
+}
 
 %% publication information
 %% NOTE: This needs to filled out ONLY IF THE PAPER WAS ACCEPTED.

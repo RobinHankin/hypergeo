@@ -1,33 +1,30 @@
 \name{hypergeo-package}
 \alias{hypergeo-package}
 \docType{package}
-\title{
-The hypergeometric function
-}
+\title{The hypergeometric function}
 \description{
-The hypergeometric function for the whole complex plane
+\packageDescription{hypergeo}
 }
 \details{
-\tabular{ll}{
-Package: \tab hypergeo\cr
-Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2008-04-16\cr
-License: \tab GPL\cr
-}
-The front end function of the package is \code{hypergeo()}: depending on
-the value of the parameters, this executes one or more of many
-sub-functions.
+The DESCRIPTION file:
+\packageDESCRIPTION{emulator}
+\packageIndices{emulator}
 }
 \author{
-Robin K. S. Hankin
-
-Maintainer: <hankin.robin@gmail.com>
-
+\packageAuthor{hypergeo}
+Maintainer: \packageMaintainer{hypergeo}
 }
+
 \references{
-  M. Abramowitz and I. A. Stegun 1965. \emph{Handbook of
-    mathematical functions}.  New York: Dover
+  \itemize{
+    \item 
+    M. Abramowitz and I. A. Stegun 1965. \emph{Handbook of
+      mathematical functions}.  New York: Dover
+    \item
+    R. K. S. Hankin 2015.  \dQuote{Numerical Evaluation of the Gauss
+      Hypergeometric Function with the hypergeo Package}.  \emph{The R
+      Journal} 7:2, pp81-88
+  }
 }
 \keyword{ package }
 \examples{
