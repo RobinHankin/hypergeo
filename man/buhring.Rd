@@ -56,7 +56,7 @@ to some sort of numerical instability.  But they seem to work OK if
 \author{Robin K. S. Hankin}
 \note{
 There is some issue which prevents the series from converging correctly,
-also sometimes the sequence converges to a demponstrably incorrect
+also sometimes the sequence converges to a demonstrably incorrect
 value. 
 }
 \seealso{\code{\link{residue}}}

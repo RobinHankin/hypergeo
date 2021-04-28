@@ -41,7 +41,7 @@ straightdash(t,z0,z1)
   \item{give}{In function \code{f15.5.1()}, Boolean with \code{TRUE}
     meaning to return extra information from \code{ode()} and default
     \code{FALSE} meaning to return only the evaluated function}
-  \item{startz}{In function \code{f15.5.1(}, the start position of the path}
+  \item{startz}{In function \code{f15.5.1()}, the start position of the path}
   \item{\dots}{Further arguments passed to \code{ode()}}
   \item{o,p}{Real and complex objects to be coerced to each other in
     \code{to_real()} and \code{to_complex()}}
