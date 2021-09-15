@@ -1,5 +1,6 @@
 library("hypergeo")
 library("hexSticker")
+library("elliptic")
 
 bmp(file="hypergeo_icon.bmp",bg="#7733FF",width=2000,height=2000)
 x <- seq(from= 0,to=2,len=300)
