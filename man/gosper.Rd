@@ -34,7 +34,7 @@ value.
 }
 
 \author{
-  R code by Robin K. S. Hankin, transcribed from maxima code posted by
+  \R code by Robin K. S. Hankin, transcribed from maxima code posted by
   Richard Fateman, who credited Bill Gosper
 }
 
