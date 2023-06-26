@@ -12,5 +12,5 @@ Suggests: magrittr
 Description: The Gaussian hypergeometric function for complex numbers.
 LinkingTo: Rcpp, RcppArmadillo
 License: GPL-2
-URL: https://github.com/RobinHankin/hypergeo.git
+URL: https://github.com/RobinHankin/hypergeo
 BugReports: https://github.com/RobinHankin/hypergeo/issues
