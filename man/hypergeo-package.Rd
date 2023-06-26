@@ -11,7 +11,10 @@ The DESCRIPTION file:
 \packageIndices{emulator}
 }
 \author{
-\packageAuthor{hypergeo}
+  \packageAuthor{hypergeo}
+  Original \proglang{R} code written by Robin Hankin, \proglang{C++} by
+  Richard Morey.
+  
 Maintainer: \packageMaintainer{hypergeo}
 }
 
