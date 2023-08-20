@@ -46,10 +46,9 @@
   methods used in the package; and justifies the package philosophy,
   which is to maintain transparent and verifiable links between the
   software and AMS-55.  The package is demonstrated in the context of
-  game theory.
+  game theory.  To cite the package in publications, please
+  use~\citep{hankin2015}.
 
-
-  This vignette is based on \citep{hankin2015}.
 }
 
 %% publication information
@@ -325,18 +324,18 @@ output (although~\cite{becken2000} caution that \proglang{Mathematica}
 routines cannot be used as reference values); and secondly,
 verification of identities which appear in AMS-55 as named equations.
 
-\section{The package in use}
-The \pkg{hypergeo} package offers direct numerical functionality to
-the \proglang{R} user on the command line.  One example from the
-author's current work is in game theory.  Consider a game in which a
-player is given~$n$ counters each of which she must allocate into one
-of two boxes, $A$ or $B$.  At times $t = 1,2,3\ldots$ a box is
-identified at random and, if it is not empty, a counter removed from
-it; box~$A$ is chosen with probability~$p$ and box~$B$ with
-probability~$1-p$.  The object of the game is to remove all counters
-as quickly as possible.  If the player places~$a$ counters in box~$A$
-and~$b$ in~$B$, then the probability mass function of removing the
-final counter at time~$t=a+b+r$ is
+\section{The package in use} The \pkg{hypergeo} package offers direct
+numerical functionality to the \proglang{R} user on the command line.
+One example from the author's current work is in game
+theory~\citep{hankin2020}.  Consider a game in which a player is
+given~$n$ counters each of which she must allocate into one of two
+boxes, $A$ or $B$.  At times $t = 1,2,3\ldots$ a box is identified at
+random and, if it is not empty, a counter removed from it; box~$A$ is
+chosen with probability~$p$ and box~$B$ with probability~$1-p$.  The
+object of the game is to remove all counters as quickly as possible.
+If the player places~$a$ counters in box~$A$ and~$b$ in~$B$, then the
+probability mass function of removing the final counter at
+time~$t=a+b+r$ is
 
 <<loadpackages,echo=FALSE>>=
 require("hypergeo")
