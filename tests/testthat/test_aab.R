@@ -1,4 +1,4 @@
-require(hypergeo)
+test_that("test suite aab", {
 
 ## Some random tests following complex ABC functionality.
 
@@ -269,4 +269,7 @@ c(0.964064283226315+0.406653008068512i, 0.82707630709444-0.370937724712521i,
 f <- function(x){hypergeo(x[1],x[2],x[3],x[4])}
 jj_R <- apply(X,1,f)
 
-stopifnot(all(abs(jj_R - jj_SAGE) < 1e-10))  # actual accuracy is higher
+expect_true(all(abs(jj_R - jj_SAGE) < 1e-10))  # actual accuracy is higher
+
+} )
+

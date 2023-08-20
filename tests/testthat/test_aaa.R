@@ -1,4 +1,8 @@
-require(hypergeo)
+test_that("test suite aaa", {
+
+library("magrittr")
+
+
 #  First some test values for z, generated randomly.  These values are
 #  selected so as to use each of the subfunctions of hypergeom():
 
@@ -28,7 +32,7 @@ maple.ans <-
 
 
 
-stopifnot(all(Mod(my.ans-maple.ans) < 1e-9))
+expect_true(all(Mod(my.ans-maple.ans) < 1e-9))
 
 
 # Now verify eqn 15.1.15, p556:
@@ -39,18 +43,63 @@ stopifnot(all(Mod(my.ans-maple.ans) < 1e-9))
 "eqn15.1.15b" <- function(a,z){sin((2*a-1)*z)/((2*a-1)*sin(z))}
 
 Mod(eqn15.1.15a(0.2,z)-eqn15.1.15b(0.2,z)) # Observe the mismatch for
-                                           # element 4.  BUT
-                                           # hypergeo() agrees with
-                                           # Maple, which gives
-                                           # 1.038571815 - 0.1598166166i
+                                           # element 4; z[4] = 2.13+0.68i.
 
+## Explicitly, the hypergeo package reports:
+
+## > eqn15.1.15a(0.2,z[4])
+## [1] 1.040142-0.161079i
+## > eqn15.1.15b(0.2,z[4])
+## [1] 1.385057+0.704653i
+
+
+## z[4] = 2.13 + 0.68i.  This value seems to be problematic, for Maple
+## gives 1.038571815 - 0.1598166166i [NB I do not have access to Maple
+## right now; perhaps this was a transcription error?]
+
+
+## The hypergeo package agrees with Mathematica and sagemath though:
+
+## In[19]:= Hypergeometric2F1[0.2,1-0.2,3/2,Sin[z]^2] 
+## Out[19]= 1.04014 - 0.161079 I 
+
+## In[20]:= Sin[(2*0.2-1)*z]/((2*0.2-1)*Sin[z]) 
+## Out[20]= 1.38506 + 0.704653 I
+
+##  sage 9.8:
+
+## sage: hypergeometric([0.2,0.8],[3/2],(sin(z)^2))
+## 1.04014221699556 - 0.161078985793549*I
+## sage: sin((0.4-1)*z)/((0.4-1)*sin(z))
+## 1.38505736631142 + 0.704652918549126*I
+
+
+
+## So it looks as though there are *two* distinct issues affecting
+## z[4].
+
+## Firstly, AMS-55's equation 15.1.15 appears to have some subtlety at
+## this value [cut line issue?].  The package and mathematica and
+## sagemath all agree with one another, and all give different results
+## for the LHS and RHS of 15.1.15.
+
+## Secondly, Maple apparently disagrees with sagemath and hypergeo and
+## Mathematica, although as I said, I do not have access to maple
+## right now and this might be a transcription error [certainly, the
+## zero in the tenths place of the real part of the result could well
+## be an intron.
+
+## In any event, we can verify that the _other_ elements of z satisfy
+## 15.1.15:
+
+expect_true(all(Mod(eqn15.1.15a(0.2,z[-4])-eqn15.1.15b(0.2,z[-4])) < 1e-7))
 
 
 "eqn15.2.10" <- function(A,B,C,z){    # page 558
   (C-A)*hypergeo(A-1,B,C,z) + (2*A-C-A*z+B*z)*hypergeo(A,B,C,z) + A*(z-1)*hypergeo(A+1,B,C,z)
 }
 
-stopifnot(all(Mod(eqn15.2.10(0.1,0.44,0.611,z))<1e-6))
+expect_true(all(Mod(eqn15.2.10(0.1,0.44,0.611,z)) < 1e-6))
 
 
 ## Now some special elementary cases, on page 556.  Here, "rhs" means
@@ -110,7 +159,7 @@ f.all <- function(z){
     )
 }
     
-stopifnot(max(Mod(f.all(z))) < 1e-10)
+expect_true((max(Mod(f.all(z))) < 1e-10))
 
 
 
@@ -119,60 +168,60 @@ stopifnot(max(Mod(f.all(z))) < 1e-10)
 # Following test fails sometimes.  It passes on my mac, fails on the linuxbox:
 jjR <- genhypergeo_contfrac_single(U=0.2 , L=c(9.9,2.7,8.7) , z=1+10i)
 jjM <- 1.0007289707983569879 + 0.86250714217251837317e-2i
-stopifnot(Mod(jjR-jjM)<1e-10)
+expect_true(Mod(jjR-jjM) < 1e-10)
 
 # Test hypergeo_cover1():
 jjR <- hypergeo(pi,pi/2,3*pi/2-4, z=0.1+0.2i)  # ie negative m;  ie f15.3.12()
 jjM <- 0.53745229690249593045 + 1.8917456473240515664i
-stopifnot(Mod(jjR-jjM)<1e-10)
+stopifnot(Mod(jjR-jjM) < 1e-10)
 
 jjR <- hypergeo(pi,pi/2,3*pi/2-4, z=10.1+0.2i)  # another negative m
 jjM <- 0.31486642443024026933e-2 + 0.10505111398350790590e-2i
-stopifnot(Mod(jjR-jjM)<1e-10)
+stopifnot(Mod(jjR-jjM) < 1e-10)
 
 jjR <- hypergeo(pi,pi/2,3*pi/2, z=0.1+0.2i)  # m=0 (ie 15.3.10)
 jjM <- 1.0654685003741342889 +0.24452141417139649656i
-stopifnot(Mod(jjR-jjM)<1e-10)
+stopifnot(Mod(jjR-jjM) < 1e-10)
 
 jjR <- hypergeo(pi,pi/2,3*pi/2+4, z=10.1+0.2i)  # This is positive m (15.3.11)
 jjM <- -0.29639970263878733845 - 0.34765230143995441172i
-stopifnot(Mod(jjR-jjM)<1e-10)
+stopifnot(Mod(jjR-jjM) < 1e-10)
 
 jjR <- hypergeo(pi,pi/2,3*pi/2+4, z=10.1+0.2i)  # m>0
 jjM <- -0.29639970263878733845 -0.34765230143995441172i
-stopifnot(Mod(jjR-jjM)<1e-10)
+stopifnot(Mod(jjR-jjM) < 1e-10)
 
 jjM <- -0.90818366414720846181e-2 - 0.10746858256201734833i
 jjR <- hypergeo(pi,pi/2,3*pi/2, z=10.1+0.2i)  # m=0
-stopifnot(Mod(jjR-jjM)<1e-10)
+stopifnot(Mod(jjR-jjM) < 1e-10)
 
 
 # Test hypergeo_cover2():
 jjM <- -0.15888831928748121465e-5 + 0.40339599711492215912e-4i
 jjR <- hypergeo(pi,pi+2, 1.1 , 1+10i)
-stopifnot(Mod(jjR-jjM)<1e-10)
+stopifnot(Mod(jjR-jjM) < 1e-10)
 
 
 # Test hypergeo_cover3()
 jjM <- -0.24397135980533720308e-1 + 0.28819643319432922231i
 jjR <- hypergeo(pi, 1.4, pi+4,1+6i)
-stopifnot(Mod(jjR-jjM)<1e-10)
+stopifnot(Mod(jjR-jjM) < 1e-10)
 
 jjM <- -0.10592465301475818414e-1 - 0.15993048891187879153e-1i
 jjR <- hypergeo(pi , pi+1 , pi + 3 , 1+6i)
-stopifnot(Mod(jjR-jjM)<1e-10)
+stopifnot(Mod(jjR-jjM) < 1e-10)
 
 # Test for hypergeo_taylor():
 jjR <- hypergeo(pi,-4,2.2,1+5i)
 jjM <- 1670.8287595795885335 - 204.81995157365381258i
-stopifnot(Mod(jjR-jjM)<1e-10)
+stopifnot(Mod(jjR-jjM) < 1e-10)
 
 
 # quick test for a bug reported by Igor Kojanov
 
 options(warn=2)
-ignore <- hypergeo(1,2,3,0)
-ignore <- hypergeo(1,1.64,2.64,-0.1111)
+expect_silent(ignore <- hypergeo(1,2,3,0))
+expect_silent(ignore <- hypergeo(1,1.64,2.64,-0.1111))
 
 
 # another test for a bug reported by John Ormerod, following my
@@ -186,9 +235,7 @@ ignore <- hypergeo(1,1.64,2.64,-0.1111)
 
 jjR <- hypergeo(5.25,1,6.5,0.501)
 jj_Mathematica <- 1.70239432012007391092082702795
-stopifnot(Mod(jjR-jj_Mathematica) < 1e-10)
-
-
+expect_true(Mod(jjR-jj_Mathematica) < 1e-10)
 
 
 
@@ -204,6 +251,8 @@ jj_R2 <- f15.3.11(A,B,m,0.9+0.01i)
 
 mma_string <- 'N[Hypergeometric2F1[1,3,1+3+2,9/10+I/100],30]'
 jj_mathematica <- 2.04925816767572859287575551415 + 0.03163091033158608113987207436i
-stopifnot(abs(jj_R1-jj_mathematica) < 1e-10)
-stopifnot(abs(jj_R2-jj_mathematica) < 1e-10)
+expect_true(abs(jj_R1-jj_mathematica) < 1e-10)
+expect_true(abs(jj_R2-jj_mathematica) < 1e-10)
+
+} )
 

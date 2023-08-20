@@ -1,5 +1,4 @@
-require("hypergeo")
-require("magrittr")
+test_that("test suite aad", {
 
 ## Some random tests that check hypergeo::complex_gamma() against
 ## numerical results from sage 8.3
@@ -87,7 +86,7 @@ z <- 0.5 + jj/11.3 + 1i*(pi-jj)/4.4
 
 ## First, check hypergeo::lanczos(log=FALSE):
 error1 <- sage_output_gamma_R_format - lanczos(z)
-stopifnot(all(abs(error1)<1e-10))
+expect_true(all(abs(error1)<1e-10))
 
 
 ## Second, check hypergeo::lanczos(log=TRUE):
@@ -95,4 +94,6 @@ stopifnot(all(abs(error1)<1e-10))
 sage_output_lngamma_R_format[20] %<>% "-"(pi*2i)
 
 error2 <- sage_output_lngamma_R_format - lanczos(z,log=TRUE) 
-stopifnot(all(abs(error2)<1e-13))
+expect_true(all(abs(error2)<1e-13))
+
+} )
