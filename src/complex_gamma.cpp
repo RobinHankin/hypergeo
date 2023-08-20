@@ -11,7 +11,7 @@
 // [[Rcpp::export]]
 arma::cx_vec complex_lngamma( const arma::cx_vec z )
 {
-  int i = 0;
+  size_t i = 0;
   
   arma::cx_vec out = z * 0;
   

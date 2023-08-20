@@ -9,7 +9,7 @@
 
 bool isgood(const arma::cx_vec x, const double tol)
 { 
-  int i=0;
+  size_t i=0;
   for( i=0 ; i < x.size() ; i++){
     if(x[i] != NA_REAL)
       if ( abs(x[i]) > tol )
@@ -32,7 +32,7 @@ arma::cx_vec genhypergeo_series( const arma::cx_vec U,
   arma::cx_vec temp = fac;
   arma::cx_vec series = z*0;
   Rcpp::LogicalVector greater( z.size() );
-  int i=0;
+  size_t i=0;
   
   if(check_mod){
     
