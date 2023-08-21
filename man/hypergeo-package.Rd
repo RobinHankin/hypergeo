@@ -1,14 +1,14 @@
 \name{hypergeo-package}
 \alias{hypergeo-package}
 \docType{package}
-\title{The hypergeometric function}
+\title{The Gauss hypergeometric function}
 \description{
 \packageDescription{hypergeo}
 }
 \details{
 The DESCRIPTION file:
-\packageDESCRIPTION{emulator}
-\packageIndices{emulator}
+\packageDESCRIPTION{hypergeo}
+\packageIndices{hypergeo}
 }
 \author{
   \packageAuthor{hypergeo}
