@@ -4,7 +4,7 @@
 #include <RcppArmadillo.h>
 #define _USE_MATH_DEFINES
 #include <math.h>
-#include "../inst/include/hypergeo.h"
+#include "hypergeo.h"
 
 // using namespace Rcpp;
 
