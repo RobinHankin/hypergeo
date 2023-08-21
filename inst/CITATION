@@ -1,0 +1,20 @@
+citHeader("To cite in publications use:")
+
+bibentry(
+    bibtype = "Article",
+    title = "Numerical evaluation of the Gauss
+      hypergeometric function with the `hypergeo` package",
+	 author = person("Robin K. S. Hankin"),
+	 journal = "The R Journal",
+         year = "2015",
+	 volume = "7",
+         issue = "2",
+         pages = "81--88",
+	 textVersion = {
+             paste("R. K. S. Hankin",
+                   "2015.",
+                   "Numerical evaluation of the Gauss hypergeometric function with the `hypergeo` package",
+	     	   "The R journal",
+		   "7(2):81-88"
+		   )
+         } )
