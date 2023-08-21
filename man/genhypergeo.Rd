@@ -52,7 +52,7 @@ genhypergeo_contfrac(U, L, z, tol = 0, maxiter = 2000)
       (u_i)_n}{(l_1)_n(l_2)_n\ldots
       (l_j)_n}\cdot\frac{z^n}{n!}}{[omitted; see PDF]} where
       \eqn{U=\left(u_1,\ldots,u_i\right)}{U=(u_1,...,u_i)} and
-      \eqn{L=\left(l_1,\ldots,l_i\right)}{L=(l_1,...,l_i)} are the
+      \eqn{L=\left(l_1,\ldots,l_i\right)}{L=(l_1,...,l_j)} are the
       \dQuote{upper} and \dQuote{lower} vectors respectively.  The
       radius of convergence of this formula is 1.
   
