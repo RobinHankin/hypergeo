@@ -1,0 +1,5 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^README\.Rmd
+^\.travis\.yml$
+^inst/hypergeo_stickermaker.R$
