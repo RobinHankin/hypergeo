@@ -183,7 +183,8 @@ function (U, L, z, tol = 0, maxiter=2000, check_mod=TRUE, polynomial=FALSE, debu
                                 imag_z = myim(z),
                                 check_mod = check_mod, maxiter = maxiter, 
                                 polynomial = polynomial, tol = tol)
-  
+
+  if(all(zapsmall(Im(out)) == 0)){out <- Re(out)}
   return(as.vector(out))
 }
 

@@ -75,6 +75,20 @@ genhypergeo_contfrac(U, L, z, tol = 0, maxiter = 2000)
   circumstances, analytic continuation defines a function over the whole
   complex plane (possibly cut along \eqn{(1,\infty)}{(1,inf)}).  Further
   work would be required to implement this.
+
+  Function \code{genhypergeo()} tests for its return value being either
+  on (or close to) the real axis, and if so, coerces its value to
+  numeric:
+
+  \code{if(all(zapsmall(Im(out)) == 0)){out <- Re(out)}}
+
+  Thus the code is sensitive, via \code{zapsmall()}, to the value of
+  \code{getOption("digits")}.
+  
+
+  
+
+  
 }
 \seealso{\code{\link{hypergeo}},\code{\link{genhypergeo_contfrac}}}
 \examples{
