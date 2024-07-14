@@ -170,7 +170,7 @@ RcppExport SEXP hypergeo_lanczos(SEXP zSEXP) {
     if (__isError) {
         SEXP __msgSEXP = Rf_asChar(__result);
         UNPROTECT(1);
-        Rf_error(CHAR(__msgSEXP));
+        Rf_error("%s", CHAR(__msgSEXP));
     }
     UNPROTECT(1);
     return __result;
@@ -201,7 +201,7 @@ RcppExport SEXP hypergeo_lanczos_cpp(SEXP realSEXP, SEXP imagSEXP) {
     if (__isError) {
         SEXP __msgSEXP = Rf_asChar(__result);
         UNPROTECT(1);
-        Rf_error(CHAR(__msgSEXP));
+        Rf_error("%s", CHAR(__msgSEXP));
     }
     UNPROTECT(1);
     return __result;
