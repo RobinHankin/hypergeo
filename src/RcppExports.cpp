@@ -34,7 +34,7 @@ RcppExport SEXP hypergeo_complex_lngamma(SEXP zSEXP) {
     if (__isError) {
         SEXP __msgSEXP = Rf_asChar(__result);
         UNPROTECT(1);
-        Rf_error(CHAR(__msgSEXP));
+        Rf_error("%s", CHAR(__msgSEXP));
     }
     UNPROTECT(1);
     return __result;
@@ -65,7 +65,7 @@ RcppExport SEXP hypergeo_complex_lngamma_cpp(SEXP realSEXP, SEXP imagSEXP) {
     if (__isError) {
         SEXP __msgSEXP = Rf_asChar(__result);
         UNPROTECT(1);
-        Rf_error(CHAR(__msgSEXP));
+        Rf_error("%s", CHAR(__msgSEXP));
     }
     UNPROTECT(1);
     return __result;
@@ -101,7 +101,7 @@ RcppExport SEXP hypergeo_genhypergeo_series(SEXP USEXP, SEXP LSEXP, SEXP zSEXP, 
     if (__isError) {
         SEXP __msgSEXP = Rf_asChar(__result);
         UNPROTECT(1);
-        Rf_error(CHAR(__msgSEXP));
+        Rf_error("%s", CHAR(__msgSEXP));
     }
     UNPROTECT(1);
     return __result;
@@ -140,7 +140,7 @@ RcppExport SEXP hypergeo_genhypergeo_series_cpp(SEXP real_USEXP, SEXP imag_USEXP
     if (__isError) {
         SEXP __msgSEXP = Rf_asChar(__result);
         UNPROTECT(1);
-        Rf_error(CHAR(__msgSEXP));
+        Rf_error("%s", CHAR(__msgSEXP));
     }
     UNPROTECT(1);
     return __result;
