@@ -32,7 +32,7 @@ arma::cx_vec genhypergeo_series( const arma::cx_vec U,
   arma::cx_vec temp = fac;
   arma::cx_vec series = z*0;
   Rcpp::LogicalVector greater( z.size() );
-  size_t i=0;
+  int i=0;
   
   if(check_mod){
     
