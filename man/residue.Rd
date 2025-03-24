@@ -1,4 +1,5 @@
 \name{residue}
+\alias{residue}
 \alias{hypergeo_residue}
 \alias{hypergeo_residue_general}
 \alias{hypergeo_residue_close_to_crit_single}
