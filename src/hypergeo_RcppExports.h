@@ -17,7 +17,7 @@ namespace hypergeo {
             require("hypergeo", Rcpp::Named("quietly") = true);
             typedef int(*Ptr_validate)(const char*);
             static Ptr_validate p_validate = (Ptr_validate)
-                R_GetCCallable("hypergeo", "hypergeo_RcppExport_validate");
+                R_GetCCallable("hypergeo", "_hypergeo_RcppExport_validate");
             if (!p_validate(sig)) {
                 throw Rcpp::function_not_exported(
                     "C++ function with signature '" + std::string(sig) + "' not found in hypergeo");
@@ -106,7 +106,7 @@ namespace hypergeo {
         static Ptr_lanczos p_lanczos = NULL;
         if (p_lanczos == NULL) {
             validateSignature("arma::cx_vec(*lanczos)(arma::cx_vec)");
-            p_lanczos = (Ptr_lanczos)R_GetCCallable("hypergeo", "hypergeo_lanczos");
+            p_lanczos = (Ptr_lanczos)R_GetCCallable("hypergeo", "_hypergeo_lanczos");
         }
         RObject __result;
         {
@@ -125,7 +125,7 @@ namespace hypergeo {
         static Ptr_lanczos_cpp p_lanczos_cpp = NULL;
         if (p_lanczos_cpp == NULL) {
             validateSignature("Rcpp::ComplexVector(*lanczos_cpp)(const Rcpp::NumericVector&,const Rcpp::NumericVector&)");
-            p_lanczos_cpp = (Ptr_lanczos_cpp)R_GetCCallable("hypergeo", "hypergeo_lanczos_cpp");
+            p_lanczos_cpp = (Ptr_lanczos_cpp)R_GetCCallable("hypergeo", "_hypergeo_lanczos_cpp");
         }
         RObject __result;
         {
