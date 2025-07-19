@@ -14,7 +14,7 @@
 
 `complex_gamma` <- function(z,log=FALSE){
   
-    out = as.vector( complex_gamma_cpp( base::Re( z ), 
+    out = as.vector( complex_lngamma_cpp( base::Re( z ), 
                      base::Im( z ) ) )
   
     if(log){        
