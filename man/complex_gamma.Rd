@@ -1,5 +1,7 @@
 \name{complex_gamma}
 \alias{complex_gamma}
+\alias{complex_lngamma}
+\alias{complex_lngamma_cpp}
 \alias{complex_factorial}
 \alias{lanczos}
 \title{
@@ -9,7 +11,8 @@ Gamma function for complex arguments
 Gamma and factorial functions for complex arguments
 }
 \usage{
-complex_gamma(z, log = FALSE)
+complex_lngamma(z, log = FALSE)
+complex_lngamma(z)
 complex_factorial(z, log = FALSE)
 lanczos(z,log=FALSE)
 }

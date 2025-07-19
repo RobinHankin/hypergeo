@@ -12,7 +12,7 @@
     }
 }
 
-`complex_gamma` <- function(z,log=FALSE){
+`complex_gamma` <- function(z, log=FALSE){
   
     out = as.vector( complex_lngamma_cpp( base::Re( z ), 
                      base::Im( z ) ) )
