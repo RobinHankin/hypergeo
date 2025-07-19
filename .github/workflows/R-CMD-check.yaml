@@ -2,7 +2,7 @@
 # for debugging help, https://github.com/r-lib/actions#where-to-find-help
 on:
   push:
-    branches: [ master]
+    branches: [ master, hotfix]
   pull_request:
     branches: [ master]
 
