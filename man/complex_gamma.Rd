@@ -1,7 +1,6 @@
 \name{complex_gamma}
 \alias{complex_gamma}
 \alias{complex_lngamma}
-\alias{complex_lngamma_cpp}
 \alias{complex_factorial}
 \alias{lanczos}
 \title{
