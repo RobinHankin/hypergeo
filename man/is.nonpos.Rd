@@ -57,7 +57,7 @@ lpham(x,n)
     \eqn{log\left(\Gamma(x+n)/\Gamma(x)\right)}{\log(Gamma(x+n)/Gamma(x))}
   }
 }
-  \author{Robin K. S. Hankin}
+\author{Robin K. S. Hankin}
 \note{
   Function \code{isgood()} uses zero as the default tolerance (argument
   \code{tol} passed in from \code{hypergeo()});

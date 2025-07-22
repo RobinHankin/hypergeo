@@ -49,7 +49,7 @@ hypergeo(A, B, C, z, tol = 0, maxiter=2000)
   \emph{Handbook of mathematical functions with formulas, 
       graphs and mathematical tables} (AMS-55).
       National Bureau of Standards}
-\author{Robin K. S. Hankin}
+\author{Robin K. S. Hankin and Richard Morey}
 \note{
 Abramowitz and Stegun state:
 

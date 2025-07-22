@@ -10,7 +10,7 @@ Gamma function for complex arguments
 Gamma and factorial functions for complex arguments
 }
 \usage{
-complex_lngamma(z)
+complex_gamma(z)
 complex_lngamma(z)
 complex_factorial(z, log = FALSE)
 lanczos(z,log=FALSE)
@@ -31,9 +31,7 @@ Lanczos, C. 1964. \dQuote{A precision approximation of the gamma
  M. Galassi et al, GNU Scientific Library Reference Manual (3rd Ed.), ISBN 0954612078. 
 
 }
-\author{
-Robin K. S. Hankin
-}
+\author{Richard Morey}
 
 \examples{
 

@@ -10,7 +10,7 @@ hypergeo_A_nonpos_int(A, B, C, z, tol = 0)
 hypergeo_AorB_nonpos_int(A, B, C, z, tol = 0)
 }
 \arguments{
-  \item{A,B,C}{Parameters for the hypergeometric function}
+  \item{A, B, C}{Parameters for the hypergeometric function}
   \item{z}{Primary complex argument}
   \item{tol}{tolerance}
 }

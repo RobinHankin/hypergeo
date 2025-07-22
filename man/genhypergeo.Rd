@@ -69,7 +69,7 @@ genhypergeo_contfrac(U, L, z, tol = 0, maxiter = 2000)
   M. Abramowitz and I. A. Stegun 1965. \emph{Handbook of
     mathematical functions}.  New York: Dover
 }
-\author{Robin K. S. Hankin}
+\author{Robin K. S. Hankin and Richard Morey}
 \note{
   The radius of convergence for the series is 1 but under some
   circumstances, analytic continuation defines a function over the whole
@@ -84,11 +84,7 @@ genhypergeo_contfrac(U, L, z, tol = 0, maxiter = 2000)
 
   Thus the code is sensitive, via \code{zapsmall()}, to the value of
   \code{getOption("digits")}.
-  
-
-  
-
-  
+   
 }
 \seealso{\code{\link{hypergeo}},\code{\link{genhypergeo_contfrac}}}
 \examples{

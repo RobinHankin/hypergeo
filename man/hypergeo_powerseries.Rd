@@ -33,9 +33,8 @@ hypergeo_powerseries(A, B, C, z, tol = 0, maxiter = 2000)
 \seealso{\code{\link{hypergeo}},\code{\link{genhypergeo}}}
 \examples{
 
-
-jjR <- hypergeo(pi,-4,2.2,1+5i)
-jjM <- 1670.8287595795885335 - 204.81995157365381258i
+jjR <- hypergeo(pi, -4, 2.2, 1+5i)  # R, hypergeo package
+jjM <- 1670.8287595795885335 - 204.81995157365381258i # mathematica
 
 
 }
