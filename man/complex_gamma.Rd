@@ -10,7 +10,7 @@ Gamma function for complex arguments
 Gamma and factorial functions for complex arguments
 }
 \usage{
-complex_gamma(z)
+complex_gamma(z, log = FALSE)
 complex_lngamma(z)
 complex_factorial(z, log = FALSE)
 lanczos(z,log=FALSE)
