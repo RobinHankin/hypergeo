@@ -20,7 +20,7 @@
 
 
 %% just as usual
-\author{Robin K. S. Hankin\\Auckland University of Technology}
+\author{Robin K. S. Hankin\\University of Stirling}
 \title{Numerical evaluation of the Gauss hypergeometric function with
   the \pkg{hypergeo} package}
 
