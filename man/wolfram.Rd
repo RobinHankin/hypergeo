@@ -54,6 +54,10 @@ w07.23.06.0031.01_bit2(A, n, m, z, tol = 0, maxiter = 2000)
   These functions use the \code{psigamma()} function which does not yet
   take complex arguments; this means that complex values for \code{A}
   are not supported.  I'm working on it.
+
+  The equation numbers on the Wolfram functions page are not in
+  numerical order.
+
   }
 \references{
   \url{http://functions.wolfram.com/PDF/Hypergeometric2F1.pdf}
