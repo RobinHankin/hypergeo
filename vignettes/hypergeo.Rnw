@@ -249,7 +249,7 @@ function(A,B,C,z,tol=0,maxiter=2000){
 \noindent (slightly edited in the interests of visual clarity).  This
 is a typical internal function of the package and like all similar
 functions is named for its equation number in~\cite{abramowitz1965}.
-Note the helper function \code{i15.3.9()}, which calculates the Gamma
+Note the helper function \code{i15.3.8()}, which calculates the Gamma
 coefficients of the two hypergeometric terms in the identity.  This
 structure allows transparent checking of the code.
 
