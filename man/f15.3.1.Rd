@@ -15,6 +15,14 @@ f15.3.1(A, B, C, z, h = 0)
   \item{h}{specification for the path to be taken; see details}
 }
 \details{
+
+  From AMS-55, equation 15.3.1:
+
+  \deqn{
+    F(a,b,c;z) = \frac{\Gamma(c)}{\Gamma(b)\Gamma(c-b)}\int_0^1
+    t^{b-1}(1-t)^{c-b-1}(1-tz)^{-a}\,dt,\qquad\Re c>\Re b>0
+    }{see AMS-55}
+  
   Argument \code{h} specifies the path to be taken (the path has to
   avoid the point \eqn{1/z}).  If \code{h} is real and of length 1, the
   path taken comprises two straight lines: one from \eqn{0} to
