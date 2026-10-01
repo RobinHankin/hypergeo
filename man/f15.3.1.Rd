@@ -50,7 +50,7 @@ The Mellin-Barnes form is not yet coded up.
 
 
 # For |z| <1 the path can be direct:
-f15.3.1(2,1,2,-1/2) -2/3
+f15.3.1(2, 1, 2, -1/2) - 2/3
 
 # cf identity 07.23.03.0046.01 of Hypergeometric2F1.pdf with b=1
 
