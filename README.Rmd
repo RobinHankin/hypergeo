@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# <img src="man/figures/hypergeo.png" width = "150" align="right" />
+# <img src="man/figures/logo.png" width = "150" align="right" />
 
 <!-- badges: start -->
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/hypergeo)](https://cran.r-project.org/package=hypergeo)

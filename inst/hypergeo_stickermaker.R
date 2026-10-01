@@ -16,5 +16,5 @@ dev.off()
 
 sticker("hypergeo_icon.bmp", package="hypergeo", p_size=18, s_x=0.975, s_y=1,
         s_width=1.3,asp=0.85, white_around_sticker=TRUE, h_fill="#7733FF",
-        h_color="#000000", filename="hypergeo.png")
+        h_color="#000000", filename="logo.png")
 
