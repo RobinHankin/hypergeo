@@ -13,7 +13,7 @@ Gamma and factorial functions for complex arguments
 complex_gamma(z, log = FALSE)
 complex_lngamma(z)
 complex_factorial(z, log = FALSE)
-lanczos(z,log=FALSE)
+lanczos(z, log=FALSE)
 }
 \arguments{
   \item{z}{Primary argument, a complex vector}
@@ -42,7 +42,7 @@ complex_gamma(1+1i)   # takes complex arguments
 complex_gamma(-5/2) + sqrt(pi)*8/15  # should be small
 
 z <- pi + 1i*sqrt(2)
-complex_gamma(z+1)-z*complex_gamma(z)   # should be small
+complex_gamma(z+1) - z*complex_gamma(z)   # should be small
 
 
 complex_gamma(z)*complex_gamma(1-z) - pi/sin(pi*z)  # small
