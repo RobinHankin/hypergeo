@@ -14,5 +14,3 @@ on:
 jobs:
   check:
     uses: robinhankin/workflow/.github/workflows/R-CMD-check.yaml@master
-    with:
-      extra-packages: algorithmicx
