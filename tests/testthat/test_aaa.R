@@ -254,5 +254,24 @@ jj_mathematica <- 2.04925816767572859287575551415 + 0.03163091033158608113987207
 expect_true(abs(jj_R1-jj_mathematica) < 1e-10)
 expect_true(abs(jj_R2-jj_mathematica) < 1e-10)
 
+
+## some tests for the case z=1, issue #14:
+
+## MMA> Hypergeometric2F1[0.4 + 0.3 I, -0.21 - 0.1 I, 1.2 + 0.11 I, 1]
+##
+## 0.91800390368038 - 0.13915815529783 I
+
+A <- 0.4 + 0.3i
+B <- -0.21 - 0.1i
+C <- 1.2 + 0.11i
+
+ans_MMA <- 0.91800390368038 - 0.13915815529783i
+
+ans_R1 <- f15.1.20(A, B, C)
+ans_R2 <- hypergeo(A, B, C, 1)
+
+expect_true(abs(ans_R1-ans_MMA) < 1e-8)
+expect_true(abs(ans_R2-ans_MMA) < 1e-8)
+
 } )
 

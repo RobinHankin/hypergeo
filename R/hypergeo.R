@@ -11,6 +11,16 @@
     genhypergeo(U=c(A,B), L=C, z=z, tol=tol, maxiter=maxiter)
 }
 
+"f15.1.20" <- function(A, B, C){
+    if(!is.null(getOption("showHGcalls"))){print(match.call())}
+    exp(
+        + complex_gamma(C    , log=TRUE)
+        + complex_gamma(C-A-B, log=TRUE)
+        - complex_gamma(C-A  , log=TRUE)
+        - complex_gamma(C-B  , log=TRUE)
+    )
+}
+
 "f15.3.1" <- function(A,B,C,z,h=0){
   if(!is.null(getOption("showHGcalls"))){print(match.call())}
 # mult <- exp(lgamma(C)-lgamma(B)-lgamma(C-B))
@@ -295,9 +305,12 @@ function (U, L, z, tol = 0, maxiter=2000, check_mod=TRUE, polynomial=FALSE, debu
   out <- z*NA
 #  if(any( close_to_crit)){out[ close_to_crit] <- hypergeo_residue_close_to_crit_multiple(A,B,C,z[ close_to_crit], tol=tol, maxiter=maxiter)}
 #  if(any(!close_to_crit)){out[!close_to_crit] <- hypergeo_powerseries                   (A,B,C,z[!close_to_crit], tol=tol, maxiter=maxiter)}
-  
+
   if(any( close_to_crit)){out[ close_to_crit] <- hypergeo_gosper      (A,B,C,z[ close_to_crit], tol=tol, maxiter=maxiter)}
   if(any(!close_to_crit)){out[!close_to_crit] <- hypergeo_powerseries (A,B,C,z[!close_to_crit], tol=tol, maxiter=maxiter)}
+
+  equal_one <- z==1
+  if(any(equal_one)){out[equal_one] <- f15.1.20(A=A, B=B, C=C)}
   
   do_with_cf <- !is.na(z) & is.na(out)   # ie failures to converge; do_with_cf == "do with Continued Fraction"
   if(any(do_with_cf)){
