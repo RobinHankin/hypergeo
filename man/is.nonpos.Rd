@@ -54,7 +54,7 @@ lpham(x,n)
     \code{thingfun()}
     \item Function \code{lpham()} returns the log of the Pochhammer
     function
-    \eqn{log\left(\Gamma(x+n)/\Gamma(x)\right)}{\log(Gamma(x+n)/Gamma(x))}
+    \eqn{\log\left(\Gamma(x+n)/\Gamma(x)\right)}{log(Gamma(x+n)/Gamma(x))}
   }
 }
 \author{Robin K. S. Hankin}
@@ -73,6 +73,9 @@ lpham(x,n)
 is.near_integer(-3)
 
 is.zero(4)
+
+thingfun(crit())
+
 }
 \keyword{math}
 
