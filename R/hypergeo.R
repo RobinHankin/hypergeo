@@ -76,8 +76,12 @@
     return(z)
   }
   jj <- i15.3.6(A,B,C)
-      jj[1] * genhypergeo(U=c(  A,  B),L=A+B-C+1,z=1-z,tol=tol,maxiter=maxiter) +
-      jj[2] * genhypergeo(U=c(C-A,C-B),L=C-A-B+1,z=1-z,tol=tol,maxiter=maxiter) * (1-z)^(C-A-B)
+  g1 <- jj[1] * genhypergeo(U=c(  A,  B),L=A+B-C+1,z=1-z,tol=tol,maxiter=maxiter)
+  g2 <- jj[2] * genhypergeo(U=c(C-A,C-B),L=C-A-B+1,z=1-z,tol=tol,maxiter=maxiter)
+  out <- g1
+  not1 <- z != 1
+  out[not1] <- out[not1] + g2 * (1-z[not1])^(C-A-B)
+  return(out)
 }
 
 "i15.3.7" <- function(A,B,C){
@@ -158,9 +162,14 @@
     return(z)
   }
   jj <- i15.3.9(A,B,C)
-    jj[1] *               z^( -A)*genhypergeo(U=c(A,A-C+1),L=A+B-C+1,z=1-1/z,tol=tol,maxiter=maxiter) +
-    jj[2] * (1-z)^(C-A-B)*z^(A-C)*genhypergeo(U=c(C-A,1-A),L=C-A-B+1,z=1-1/z,tol=tol,maxiter=maxiter)
-  }
+  g1 <- jj[1] * z^( -A)*genhypergeo(U=c(A,A-C+1),L=A+B-C+1,z=1-1/z,tol=tol,maxiter=maxiter)
+  g2 <- jj[2] * z^(A-C)*genhypergeo(U=c(C-A,1-A),L=C-A-B+1,z=1-1/z,tol=tol,maxiter=maxiter)
+
+  out <- g1
+  not1 <- z != 1
+  out[not1] <- out[not1] + g2 * (1-z[not1])^(C-A-B)
+  return(out)
+}
 
 "isgood" <- function(x,tol){ all(abs(x[!is.na(x)]) <= tol)}
 

@@ -26,7 +26,12 @@ f15.3.9(A, B, C, z, tol = 0, maxiter = 2000)
   \item{tol,maxiter}{parameters passed to \code{genhypergeo()}}
 }
 \details{
-  The naming scheme follows that of Abramowitz and Stegun
+  The naming scheme follows that of Abramowitz and Stegun.
+
+  The rather awkward constuction of \code{f15.3.6()} and
+  \code{f15.3.9()} is due to the fact that R returns \code{NaN + NaNi}
+  for \code{0^z} for any \code{z} with \eqn{Im(z)\neq 0}{omitted}.
+  
 }
 \references{
   M. Abramowitz and I. A. Stegun 1965. \dQuote{Handbook of
