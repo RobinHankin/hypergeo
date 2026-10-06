@@ -309,9 +309,6 @@ function (U, L, z, tol = 0, maxiter=2000, check_mod=TRUE, polynomial=FALSE, debu
   if(any( close_to_crit)){out[ close_to_crit] <- hypergeo_gosper      (A,B,C,z[ close_to_crit], tol=tol, maxiter=maxiter)}
   if(any(!close_to_crit)){out[!close_to_crit] <- hypergeo_powerseries (A,B,C,z[!close_to_crit], tol=tol, maxiter=maxiter)}
 
-  equal_one <- z==1
-  if(any(equal_one)){out[equal_one] <- f15.1.20(A=A, B=B, C=C)}
-  
   do_with_cf <- !is.na(z) & is.na(out)   # ie failures to converge; do_with_cf == "do with Continued Fraction"
   if(any(do_with_cf)){
     out[do_with_cf] <- hypergeo_contfrac(A=A, B=B, C=C, z=z[do_with_cf], maxiter=maxiter)
