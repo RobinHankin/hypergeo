@@ -32,7 +32,6 @@ arma::cx_vec genhypergeo_series( const arma::cx_vec U,
   arma::cx_vec temp = fac;
   arma::cx_vec series = z*0;
   Rcpp::LogicalVector greater( z.size() );
-  int i=0;
   
   if(check_mod){
     
@@ -46,7 +45,7 @@ arma::cx_vec genhypergeo_series( const arma::cx_vec U,
     if( is_true( Rcpp::all(greater) ) ){
       return(z * NA_REAL);
     }else{
-      for( i = 0 ; i < z.size() ; i++){
+      for(arma::uword i = 0 ; i < z.size() ; i++){
         if( greater[i] ) z[i] = NA_REAL;
       }
     } 
@@ -56,7 +55,7 @@ arma::cx_vec genhypergeo_series( const arma::cx_vec U,
     return z*0+fac;
   }
   
-  for ( i = 0; i < maxiter; i++ ) {
+  for (arma::uword i = 0; i < maxiter; i++ ) {
     fac = fac * ( prod(U + i) / prod(L + i) ) % ( z / ( i + 1 ) );
     series = temp + fac;
     if ( isgood( series - temp, tol ) ){
