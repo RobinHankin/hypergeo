@@ -60,7 +60,7 @@ w07.23.06.0031.01_bit2(A, n, m, z, tol = 0, maxiter = 2000)
 
   }
 \references{
-  \url{http://functions.wolfram.com/PDF/Hypergeometric2F1.pdf}
+  \url{https://functions.wolfram.com/PDF/Hypergeometric2F1.pdf}
 }
 \author{Robin K. S. Hankin}
 \seealso{\code{\link{f15.3.10}},\code{\link{hypergeo}}}
