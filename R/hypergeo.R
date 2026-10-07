@@ -203,7 +203,7 @@ function (U, L, z, tol = 0, maxiter=2000, check_mod=TRUE, polynomial=FALSE, debu
                                 check_mod = check_mod, maxiter = maxiter, 
                                 polynomial = polynomial, tol = tol)
 
-  if(all(zapsmall(Im(out)) == 0)){out <- Re(out)}
+  if(all(zapsmall(Im(out)) == 0, na.rm = TRUE)){out <- Re(out)}
   return(as.vector(out))
 }
 
