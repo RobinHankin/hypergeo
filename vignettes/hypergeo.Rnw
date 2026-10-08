@@ -439,8 +439,9 @@ close to, but not exactly, integers because the terms in
 equations~\ref{15.3.6} through~\ref{15.3.9} become large and
 cancellation errors become important.
 
-Further work might include extension to complex auxiliary parameters
-but \citeauthor{michel2008} caution that this is not straightforward.
+Experimental functionality implementing complex auxiliary parameters
+is given in package versions {\tt >= 1.2-15} but see
+\cite{michel2008}.
 
 \bibliography{hypergeometric}
 \end{document}
