@@ -55,7 +55,7 @@ arma::cx_vec genhypergeo_series( const arma::cx_vec U,
     return z*0+fac;
   }
   
-  for (arma::uword i = 0; i < maxiter; i++ ) {
+  for (int i = 0; i < maxiter; i++ ) {
     fac = fac * ( prod(U + i) / prod(L + i) ) % ( z / ( i + 1 ) );
     series = temp + fac;
     if ( isgood( series - temp, tol ) ){
