@@ -197,7 +197,7 @@ following transformations:
 \begin{align}
 \ft\left(a,b;c;z\right)
 &= \left(1-z\right)^{-a}\ft\left(a,c-b;c;\frac{z}{z-1}\right)\tag{15.3.4}\label{15.3.4}\\
-&= \left(1-z\right)^{-b}\ft\left(a,c-a;c;\frac{z}{z-1}\right)\tag{15.3.5}\label{15.3.5}\\
+&= \left(1-z\right)^{-b}\ft\left(b,c-a;c;\frac{z}{z-1}\right)\tag{15.3.5}\label{15.3.5}\\
 &= \four{c}{c-a-b}{c-a}{c-b}\ft\left(a,b;a+b-c+1;1-z\right)\nonumber\\
 &{}\qquad+ (1-z)^{c-a-b}\four{c}{a+b-c}{a}{b}\ft\left(c-a,c-b;c-a-b+1;1-z\right)\label{15.3.6}\tag{15.3.6}\\
 &= \four{c}{b-a}{b}{c-a}\left(-z\right)^{-a}\ft\left(a,1-c+a;1-b+a;\frac{1}{z}\right)\nonumber\\
