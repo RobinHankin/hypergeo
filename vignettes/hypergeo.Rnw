@@ -242,7 +242,7 @@ lower indices~$a_i,b_i$.
 %(lower indices~$b_i$ are appended with a ``$+1$'').
 
 Thus for example if $(1-z)^{-1}$ is small in absolute value we would
-use function \code{f13.3.8()}:
+use function \code{f15.3.8()}:
 
 \begin{Schunk}
 \begin{Sinput}
