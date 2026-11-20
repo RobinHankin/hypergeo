@@ -251,7 +251,7 @@ static int _hypergeo_RcppExport_validate(const char* sig) {
 }
 
 // registerCCallable (register entry points for exported C++ functions)
-RcppExport SEXP _hypergeo_RcppExport_registerCCallable() { 
+RcppExport SEXP _hypergeo_RcppExport_registerCCallable(void) { 
     R_RegisterCCallable("hypergeo", "_hypergeo_complex_lngamma", (DL_FUNC)_hypergeo_complex_lngamma_try);
     R_RegisterCCallable("hypergeo", "_hypergeo_complex_lngamma_cpp", (DL_FUNC)_hypergeo_complex_lngamma_cpp_try);
     R_RegisterCCallable("hypergeo", "_hypergeo_genhypergeo_series", (DL_FUNC)_hypergeo_genhypergeo_series_try);
