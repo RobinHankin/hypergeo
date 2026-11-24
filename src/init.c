@@ -3,10 +3,6 @@
 #include <stdlib.h> // for NULL
 #include <R_ext/Rdynload.h>
 
-/* FIXME: 
-   Check these declarations against the C/Fortran source code.
-*/
-
 /* .Call calls */
 extern SEXP _hypergeo_complex_lngamma(SEXP);
 extern SEXP _hypergeo_complex_lngamma_cpp(SEXP, SEXP);
@@ -14,7 +10,7 @@ extern SEXP _hypergeo_genhypergeo_series(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEX
 extern SEXP _hypergeo_genhypergeo_series_cpp(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
 extern SEXP _hypergeo_lanczos(SEXP);
 extern SEXP _hypergeo_lanczos_cpp(SEXP, SEXP);
-extern SEXP _hypergeo_RcppExport_registerCCallable();
+extern SEXP _hypergeo_RcppExport_registerCCallable(void);
 
 static const R_CallMethodDef CallEntries[] = {
     {"_hypergeo_complex_lngamma",               (DL_FUNC) &_hypergeo_complex_lngamma,                 1},
